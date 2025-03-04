@@ -5,14 +5,17 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return """
-    <html>
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome</title>
         <style>
             body {
-                background-color: #121212;
+                background: linear-gradient(135deg, #667eea, #764ba2);
                 color: white;
-                font-family: Arial, sans-serif;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -20,19 +23,29 @@ def home():
                 margin: 0;
                 text-align: center;
             }
+            .container {
+                background: rgba(0, 0, 0, 0.5);
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
             h1 {
-                font-size: 3em;
-                font-weight: bold;
+                font-size: 3.5rem;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 1.5rem;
             }
         </style>
     </head>
     <body>
-        <h1>Hello, This is STEVEN AZIAVULA!</h1>
+        <div class="container">
+            <h1>Hello, it's <span style="color: #ffcc00;">STEVEN AZIAVULA</span>!</h1>
+            <p>Welcome to my Flask cloud app.</p>
+        </div>
     </body>
     </html>
     """
 
 if __name__ == '__main__':
-    import os
-    port = int(os.environ.get('PORT', 8080))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
