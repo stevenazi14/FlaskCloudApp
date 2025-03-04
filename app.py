@@ -23,10 +23,16 @@ def home():
             h1 {
                 font-size: 3em;
                 font-weight: bold;
-                transition: text-shadow 0.3s ease-in-out;
+                padding: 20px;
+                border: 2px solid #00ffff;
+                border-radius: 15px;
+                box-shadow: 0 0 10px #00ffff;
+                transition: all 0.3s ease-in-out;
             }
             h1:hover {
-                text-shadow: 0 0 20px #00ffff;
+                text-shadow: 0 0 20px #ff00ff;
+                box-shadow: 0 0 25px #ff00ff;
+                border-color: #ff00ff;
             }
         </style>
     </head>
